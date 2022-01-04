@@ -1,2 +1,2 @@
-idf_component_register(SRCS "first_arduino_test.c"
+idf_component_register(SRCS "main.cpp"
                     INCLUDE_DIRS ".")
