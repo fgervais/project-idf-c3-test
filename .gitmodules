@@ -1,0 +1,3 @@
+[submodule "first_arduino_test/components/arduino"]
+	path = first_arduino_test/components/arduino
+	url = https://github.com/espressif/arduino-esp32.git
