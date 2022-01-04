@@ -13,3 +13,9 @@ Works in `master`, will work in releases after `4.4`.
 ```bash
 docker run --rm -it -v $(pwd):/project -w /project --user $(id -u):$(id -g) espressif/idf:release-v4.4 idf.py save-defconfig
 ```
+
+## Build
+
+```bash
+docker run --rm -it -v $(pwd):/project -w /project --user $(id -u):$(id -g) --tmpfs /.ccache espressif/idf:release-v4.4 idf.py build
+```

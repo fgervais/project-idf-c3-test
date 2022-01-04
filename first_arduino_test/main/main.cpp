@@ -1,3 +1,12 @@
+#include "Arduino.h"
+#include "secrets.h"
+
+#include <WiFi.h>
+
+
+constexpr auto LED = 4;
+
+
 void init_wifi() {
 	WiFi.mode(WIFI_STA);
 	WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
