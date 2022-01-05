@@ -22,7 +22,7 @@ void setup()
 {
 	// initialize LED digital pin as an output.
 	pinMode(LED, OUTPUT);
-	// Serial.begin(115200);
+	Serial.begin(115200);
 
 	// init_wifi();
 }
@@ -41,5 +41,5 @@ void loop()
 	// wait for a second
 	delay(1000);
 
-	Serial.print("Loop done");
+	Serial.println("Loop done");
 }
