@@ -23,12 +23,15 @@ void setup()
 	// initialize LED digital pin as an output.
 	pinMode(LED, OUTPUT);
 	Serial.begin(115200);
-
-	// init_wifi();
 }
 
 void loop()
 {
+	if (WiFi.status() != WL_CONNECTED) {
+		delay(5000);
+		init_wifi();
+	}
+
 	// turn the LED on (HIGH is the voltage level)
 	digitalWrite(LED, HIGH);
 
