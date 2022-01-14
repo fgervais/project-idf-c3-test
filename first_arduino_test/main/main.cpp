@@ -21,16 +21,20 @@ void init_wifi() {
 void setup()
 {
 	// initialize LED digital pin as an output.
-	pinMode(LED, OUTPUT);
-	Serial.begin(115200);
+	// pinMode(LED, OUTPUT);
+	// Serial.begin(115200);
 }
 
 void loop()
 {
-	if (WiFi.status() != WL_CONNECTED) {
-		delay(5000);
-		init_wifi();
-	}
+	// if (WiFi.status() != WL_CONNECTED) {
+	// 	delay(5000);
+	// 	init_wifi();
+	// }
+
+	// Serial.println("Going to sleep");
+	delay(5000);
+	esp_deep_sleep_start();
 
 	// turn the LED on (HIGH is the voltage level)
 	digitalWrite(LED, HIGH);
