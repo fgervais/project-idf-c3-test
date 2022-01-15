@@ -23,6 +23,16 @@ void setup()
 	// initialize LED digital pin as an output.
 	// pinMode(LED, OUTPUT);
 	// Serial.begin(115200);
+
+	constexpr auto DEFAULT_WAKEUP_PIN = 0;
+	constexpr auto DEFAULT_WAKEUP_LEVEL = ESP_GPIO_WAKEUP_GPIO_LOW;
+
+	const gpio_config_t config = {
+		.pin_bit_mask = BIT(DEFAULT_WAKEUP_PIN),
+		.mode = GPIO_MODE_INPUT,
+	};
+	ESP_ERROR_CHECK(gpio_config(&config));
+	ESP_ERROR_CHECK(esp_deep_sleep_enable_gpio_wakeup(BIT(DEFAULT_WAKEUP_PIN), DEFAULT_WAKEUP_LEVEL));
 }
 
 void loop()
@@ -34,6 +44,7 @@ void loop()
 
 	// Serial.println("Going to sleep");
 	delay(5000);
+
 	esp_deep_sleep_start();
 
 	// turn the LED on (HIGH is the voltage level)
