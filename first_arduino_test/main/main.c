@@ -50,6 +50,7 @@ static void wifi_power_save(void)
 	ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config));
 	ESP_ERROR_CHECK(esp_wifi_start());
 
+	ESP_ERROR_CHECK(esp_wifi_set_inactive_time(WIFI_IF_STA, 30));
 	ESP_LOGI(TAG, "esp_wifi_set_ps().");
 	esp_wifi_set_ps(WIFI_PS_MIN_MODEM);
 }
